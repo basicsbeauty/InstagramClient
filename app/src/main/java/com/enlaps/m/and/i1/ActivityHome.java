@@ -34,8 +34,8 @@ public class ActivityHome extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         init();
-        setAdapters();
         getPhotos();
+        setAdapters();
     }
 
     protected void init() {
@@ -44,14 +44,17 @@ public class ActivityHome extends AppCompatActivity {
 
         // LV: Background color
         mLvPhotos.setBackgroundColor(Color.WHITE);
+
+        photos = new ArrayList<>();
+        adapter = new PhotoArrayAdapter( this, photos);
     }
 
     protected void setAdapters() {
 
-        photos = new ArrayList<>();
-        adapter = new PhotoArrayAdapter( this, photos);
+        Log.d("Data Count 2", Integer.toString(photos.size()));
 
         mLvPhotos.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     protected void getPhotos() {
@@ -68,7 +71,7 @@ public class ActivityHome extends AppCompatActivity {
 
         photos = handler.mediaObjects;
 
-        adapter.notifyDataSetChanged();
+        Log.d("Data Count", Integer.toString(photos.size()));
+        //adapter.notifyDataSetChanged();
     }
-
 }

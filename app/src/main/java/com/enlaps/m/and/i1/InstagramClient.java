@@ -68,7 +68,6 @@ public class InstagramClient extends JsonHttpResponseHandler {
                 if( temp != null) {
                     rval.caption = object.getJSONObject(JSON_TAG_CAPTION).getString(JSON_TAG_CAPTION_TEXT);
                 }
-
         }
         catch (JSONException e) {
             e.printStackTrace();

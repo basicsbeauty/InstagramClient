@@ -29,6 +29,7 @@ public class InstagramClient extends JsonHttpResponseHandler {
         // Username
             public static final String JSON_TAG_USER = "user";
             public static final String JSON_TAG_USERNAME = "username";
+            public static final String JSON_TAG_USER_PICTURE = "profile_picture";
 
         // Image URL
             public static final String JSON_TAG_IMAGES = "images";
@@ -55,6 +56,9 @@ public class InstagramClient extends JsonHttpResponseHandler {
         try {
             // Username
                 rval.username = object.getJSONObject(JSON_TAG_USER).getString(JSON_TAG_USERNAME);
+
+            // User: Profile picture
+                rval.user_profile_pircture = object.getJSONObject(JSON_TAG_USER).getString(JSON_TAG_USER_PICTURE);
 
             // Like Count
                 rval.like_count = object.getJSONObject(JSON_TAG_LIKES).getInt(JSON_TAG_COUNT);

@@ -31,11 +31,11 @@ public class PhotoArrayAdapter extends ArrayAdapter<MediaObject> {
             convertView = LayoutInflater.from( getContext()).inflate(R.layout.item_photo, parent, false);
         }
 
-        TextView tvCaption      = (TextView) convertView.findViewById(R.id.tvCaption);
-        TextView tvUsername     = (TextView) convertView.findViewById(R.id.tvUsername);
-        TextView tvLikeCount    = (TextView) convertView.findViewById(R.id.tvLikeCount);
-        ImageView ivPhoto       = (ImageView) convertView.findViewById(R.id.ivPhoto);
-
+        TextView tvCaption          = (TextView) convertView.findViewById(R.id.tvCaption);
+        TextView tvUsername         = (TextView) convertView.findViewById(R.id.tvUsername);
+        TextView tvLikeCount        = (TextView) convertView.findViewById(R.id.tvLikeCount);
+        ImageView ivPhoto           = (ImageView) convertView.findViewById(R.id.ivPhoto);
+        ImageView ivProfilePhoto    = (ImageView) convertView.findViewById(R.id.ivPofilePicture);
 
         // Caption
             if( 0 < object.caption.length()) {
@@ -44,6 +44,10 @@ public class PhotoArrayAdapter extends ArrayAdapter<MediaObject> {
 
         // Username
             tvUsername.setText( object.username);
+
+        // User: Profile picture
+            ivProfilePhoto.setImageResource(0);
+            Picasso.with(getContext()).load(object.user_profile_pircture).into(ivProfilePhoto);
 
         // Like Count
             tvLikeCount.setText( Integer.toString(object.like_count));

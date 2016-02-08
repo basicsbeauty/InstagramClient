@@ -23,7 +23,7 @@ import cz.msebera.android.httpclient.Header;
 public class ActivityHome extends AppCompatActivity {
 
     // Components
-    ListView mLvPhotos;
+    @Bind(R.id.lvPhotos) ListView mLvPhotos;
 
     // Constants
     public static final String  CLIENT_ID = "e05c462ebd86446ea48a5af73769b602";
@@ -43,7 +43,7 @@ public class ActivityHome extends AppCompatActivity {
         //
             ButterKnife.bind(this);
 
-            mLvPhotos = (ListView) findViewById(R.id.lvPhotos);
+            //mLvPhotos = (ListView) findViewById(R.id.lvPhotos);
 
             // LV: Background color
             mLvPhotos.setBackgroundColor(Color.WHITE);

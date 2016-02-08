@@ -19,7 +19,7 @@ public class PhotoArrayAdapter extends ArrayAdapter<MediaObject> {
 
 
     public PhotoArrayAdapter( Context context, ArrayList<MediaObject> objects) {
-        super( context, 0, objects);
+        super( context, android.R.layout.simple_list_item_1, objects);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class PhotoArrayAdapter extends ArrayAdapter<MediaObject> {
             tvUsername.setText( object.username);
 
         // Like Count
-            tvLikeCount.setText(object.like_count);
+            tvLikeCount.setText( Integer.toString(object.like_count));
 
         // Image
             ivPhoto.setImageResource(0);
